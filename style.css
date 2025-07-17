@@ -1,0 +1,53 @@
+body {
+    background-color: #f3e5ab;
+    font-family: 'EB Garamond', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.book {
+    background: #fff8dc;
+    border: 2 px solid #8b5e3c;
+    width: 600px;
+    height: 700px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    transform: rotate(-1deg);
+}
+
+.page {
+    position: relative;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    text-align: center;
+    color: #5a381e;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-style: italic;
+    text-align: right;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.entry {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.signature {
+    text-align: right;
+    font-family: 'Great Vibe', cursive;
+    font-size: 26px;
+    color: #6b4226;
+    margin-top: 40px;
+}
