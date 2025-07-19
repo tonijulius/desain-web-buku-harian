@@ -7,29 +7,56 @@ body {
     height: 100vh;
 }
 
-.book {
-    background: #fff8dc;
-    border: 2 px solid #8b5e3c;
-    width: 600px;
-    height: 700px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+.container {
     position: relative;
-    transform: rotate(-1deg);
+    perspective: 2000px;
+}
+
+.book {
+    width: 800px;
+    height: 700px;
+    display: flex;
+    position: relative;
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
 }
 
 .page {
-    position: relative;
+    width: 50%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #fff8dc;
+    border: 2px solid #8b5e3c;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.left {
+    transform: rotateY('0deg');
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.right {
+    transform: rotateY('0deg');
+    border-left: none;
+    border-radius: 0 5px 5px 0;
 }
 
 h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 36px;
-    text-align: center;
     color: #5a381e;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 15px;
+}
 .date {
     font-style: italic;
     text-align: right;
@@ -49,5 +76,26 @@ h1 {
     font-family: 'Great Vibe', cursive;
     font-size: 26px;
     color: #6b4226;
-    margin-top: 40px;
+    margin-top: 30px;
+}
+
+.flip-btn {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    background: #8b5e3c;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.flip-btn:hover {
+    background: #a56b3f;
+}
+
+#flip:checked ~ .book {
+    transform: rotateY(180deg);
 }
