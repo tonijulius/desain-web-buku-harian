@@ -8,18 +8,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=EB+Garamond&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="book">
-        <div class="page">
-            <h1>Buku Harian Toni</h1>
-            <p class="date">1 juli 2025</p>
-            <p class="entry">
-                hari ini adalah hari yang sangat sibuk karena aku harus segera menyelesaikan project ku yang sudah mencapai tenggat waktu.
-            </p>
-            <p class="entry">
-                di masa tenggat waktu ini entah kenapa aku merasa sangat termotivasi dan ide-ide mengalir lancar.
-            </p>
-            <p class="signature">- toni</p>
+    <div class="container">
+        <!--Checkbox sebagai kontrol utama-->
+        <input type="checkbox" id="flip" hidden>
+        <div class="book">
+            <!--Halaman kiri-->
+            <div class="page left">
+                <h1>Buku Harian Toni</h1>
+                <p class="date">1 juli 2025</p>
+                <p class="entry">
+                    hari ini adalah hari yang sangat sibuk karena aku harus segera menyelesaikan project ku yang sudah mencapai tenggat waktu.
+                </p>
+                <p class="entry">
+                    di masa tenggat waktu ini entah kenapa aku merasa sangat termotivasi dan ide-ide mengalir lancar.
+                </p>
+                <p class="signature">- toni</p>
+            </div>
+
+            <div class="page right">
+                <h1>Buku Harian Toni</h1>
+                <p class="date">2 juli 2025</p>
+                <p class="entry">
+                    ini adalah harinya, hari aku mempresentasikan hasil tugas ku dan aku merasa sedikit gugup
+                </p>
+                <p class="entry">
+                    Alhamdulilah presentasi tugasnya lancar dan dosen ku cukup terkesan dengan presentasi tugas project ku
+                </p>
+                <p class="signature">- toni</p>
+            </div>
         </div>
+
+        <!--Tombol "balik halaman"-->
+        <label for="flip" class="flip-btn">Balik Halaman</label>
     </div>
 </body>
 </html>
