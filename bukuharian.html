@@ -9,37 +9,65 @@
 </head>
 <body>
     <div class="container">
-        <!--Checkbox sebagai kontrol utama-->
-        <input type="checkbox" id="flip" hidden>
+        <!--Radio kontrol halaman-->
+        <input type="radio" name="page" id="p1" checked hidden>
+        <input type="radio" name="page" id="p2" hidden>
+        <input type="radio" name="page" id="p3" hidden>
+
         <div class="book">
-            <!--Halaman kiri-->
-            <div class="page left">
-                <h1>Buku Harian Toni</h1>
-                <p class="date">1 juli 2025</p>
-                <p class="entry">
-                    hari ini adalah hari yang sangat sibuk karena aku harus segera menyelesaikan project ku yang sudah mencapai tenggat waktu.
-                </p>
-                <p class="entry">
-                    di masa tenggat waktu ini entah kenapa aku merasa sangat termotivasi dan ide-ide mengalir lancar.
-                </p>
-                <p class="signature">- toni</p>
+            <!-- View 1: Halaman 1–2 -->
+            <div class="sheet sheet1">
+                <div class="page left">
+                    <h2>17 Juli 2025</h2>
+                    <p>Hari ini aku kembali merenung tentang dunia...</p>
+                    <p class="signature">— Arya</p>
+                </div>
+                <div class="page right">
+                    <h2>18 Juli 2025</h2>
+                    <p>Hujan turun deras malam ini...</p>
+                    <p class="signature">— Arya</p>
+                </div>
             </div>
 
-            <div class="page right">
-                <h1>Buku Harian Toni</h1>
-                <p class="date">2 juli 2025</p>
-                <p class="entry">
-                    ini adalah harinya, hari aku mempresentasikan hasil tugas ku dan aku merasa sedikit gugup
-                </p>
-                <p class="entry">
-                    Alhamdulilah presentasi tugasnya lancar dan dosen ku cukup terkesan dengan presentasi tugas project ku
-                </p>
-                <p class="signature">- toni</p>
+            <!-- View 2: Halaman 3–4 -->
+            <div class="sheet sheet2">
+                <div class="page left">
+                    <h2>19 Juli 2025</h2>
+                    <p>Aku mulai merasa kesepian hari ini...</p>
+                    <p class="signature">— Arya</p>
+                </div>
+                <div class="page right">
+                    <h2>20 Juli 2025</h2>
+                    <p>Hari Minggu yang tenang dan penuh aroma kopi...</p>
+                    <p class="signature">— Arya</p>
+                </div>
+            </div>
+
+            <!-- View 3: Halaman 5–6 -->
+            <div class="sheet sheet3">
+                <div class="page left">
+                    <h2>21 Juli 2025</h2>
+                    <p>Waktu terus berjalan, tapi aku ingin berhenti sejenak...</p>
+                    <p class="signature">— Arya</p>
+                </div>
+                <div class="page right">
+                    <h2>22 Juli 2025</h2>
+                    <p>Hari ini aku bersyukur masih bisa bernapas...</p>
+                    <p class="signature">— Arya</p>
+                </div>
             </div>
         </div>
 
-        <!--Tombol "balik halaman"-->
-        <label for="flip" class="flip-btn">Balik Halaman</label>
+        <!--Navigasi-->
+        <div class="nav">
+            <label for="p1" class="nav-btn">⬅️</label>
+            <label for="p2" class="nav-btn">⬅️</label>
+            <label for="p3" class="nav-btn">⬅️</label>
+
+            <label for="p1" class="nav-btn">➡️</label>
+            <label for="p2" class="nav-btn">➡️</label>
+            <label for="p3" class="nav-btn">➡️</label>
+        </div>
     </div>
 </body>
 </html>

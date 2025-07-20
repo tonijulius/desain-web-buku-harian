@@ -1,101 +1,112 @@
 body {
-    background-color: #f3e5ab;
-    font-family: 'EB Garamond', serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background: #f3e5ab;
+  font-family: 'EB Garamond', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .container {
-    position: relative;
-    perspective: 2000px;
+  position: relative;
 }
 
 .book {
-    width: 800px;
-    height: 700px;
-    display: flex;
-    position: relative;
-    transition: transform 1s ease;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 800px;
+  height: 600px;
+  perspective: 2000px;
+}
+
+.sheet {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform-style: preserve-3d;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .page {
-    width: 50%;
-    height: 100%;
-    padding: 40px;
-    box-sizing: border-box;
-    background: #fff8dc;
-    border: 2px solid #8b5e3c;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
+  width: 50%;
+  height: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #fff8dc;
+  border: 2px solid #8b5e3c;
+  overflow-y: auto;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
 }
 
 .left {
-    transform: rotateY('0deg');
-    border-right: none;
-    border-radius: 5px 0 0 5px;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
 }
 
 .right {
-    transform: rotateY('0deg');
-    border-left: none;
-    border-radius: 0 5px 5px 0;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
 }
 
-h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 36px;
-    color: #5a381e;
-    margin-bottom: 20px;
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #5a381e;
 }
 
 p {
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: justify;
-    margin-bottom: 15px;
-}
-.date {
-    font-style: italic;
-    text-align: right;
-    margin-bottom: 30px;
-    color: #555;
-}
-
-.entry {
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: justify;
-    margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 15px;
 }
 
 .signature {
-    text-align: right;
-    font-family: 'Great Vibe', cursive;
-    font-size: 26px;
-    color: #6b4226;
-    margin-top: 30px;
+  text-align: right;
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  margin-top: 30px;
+  color: #6b4226;
 }
 
-.flip-btn {
-    margin-top: 20px;
-    display: block;
-    text-align: center;
-    background: #8b5e3c;
-    color: white;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background 0.3s ease;
+.nav {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.flip-btn:hover {
-    background: #a56b3f;
+.nav-btn {
+  background: #8b5e3c;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
 }
 
-#flip:checked ~ .book {
-    transform: rotateY(180deg);
+/* Tampilkan hanya sheet yang aktif */
+#p1:checked ~ .book .sheet1,
+#p2:checked ~ .book .sheet2,
+#p3:checked ~ .book .sheet3 {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* Navigasi arah (aktif hanya untuk halaman terkait) */
+#p1:checked ~ .nav label[for="p2"],
+#p2:checked ~ .nav label[for="p3"],
+#p2:checked ~ .nav label[for="p1"],
+#p3:checked ~ .nav label[for="p2"] {
+  display: inline-block;
+}
+
+.nav label {
+  display: none;
 }
